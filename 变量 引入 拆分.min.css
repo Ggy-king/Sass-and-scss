@@ -1,0 +1,11 @@
+.main {
+    background-color: pink
+}
+
+.module {
+    font-size: 7px
+}
+
+.feature {
+    background-image: linear-gradient(pink, green)
+}

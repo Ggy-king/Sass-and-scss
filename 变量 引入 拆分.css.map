@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACF,gBAAgB,ECFV,KAAK;CDGd;;AAED,AAAA,OAAO,CAAC;EACJ,SAAS,ECLN,GAAM;CDMZ;;AAED,AAAA,QAAQ,CAAC;EACL,gBAAgB,EAAE,4BAAiC;CACtD",
+    "sources": [
+        "变量 引入 拆分.scss",
+        "_Viriables.scss"
+    ],
+    "names": [],
+    "file": "变量 引入 拆分.css"
+}

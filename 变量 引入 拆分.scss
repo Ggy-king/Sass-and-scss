@@ -1,0 +1,13 @@
+@import 'Viriables';
+
+.main {
+    background-color: $color2;
+}
+
+.module {
+    font-size: $font1;
+}
+
+.feature {
+    background-image: linear-gradient($color1, $color2);
+}

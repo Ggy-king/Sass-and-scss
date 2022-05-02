@@ -1,0 +1,13 @@
+.main {
+  background-color: green;
+}
+
+.module {
+  font-size: 7px;
+}
+
+.feature {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(pink), to(green));
+  background-image: linear-gradient(pink, green);
+}
+/*# sourceMappingURL=变量 引入 拆分.css.map */

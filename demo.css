@@ -1,0 +1,13 @@
+.main {
+  background-color: green;
+}
+
+.feature {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(pink), to(green));
+  background-image: linear-gradient(pink, green);
+}
+
+.header {
+  background-color: #fff;
+}
+/*# sourceMappingURL=demo.css.map */

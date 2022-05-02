@@ -1,0 +1,9 @@
+@import 'Viriables';
+// 注意变量的那个文件必须要在前 scss执行顺序是按从上到下
+@import 'main';
+@import 'feature';
+
+
+.header {
+    background-color: #fff;
+}
