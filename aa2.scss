@@ -1,0 +1,43 @@
+.header {
+    .span {
+        background-color: pink;
+
+        &:active {
+            font-size: 16px;
+        }
+    }
+
+    .span:active {
+        font-size: 15px;
+    }
+
+}
+
+// 该语法与less比较类似 但由于less 具有变量 运算等操作
+// 变量以$开头
+// 变量需要放在执行之前，js可以不用
+$color:#777;
+$font:18px/2;
+
+.title {
+    color: $color;
+}
+
+.footer {
+    font-size: $font;
+}
+
+.text {
+    color: $color;
+    font-size: $font;
+}
+
+// lighten()变浅函数
+.lighten {
+    background-color: lighten($color, 20%);
+}
+
+// darken()变深函数
+.darken {
+    background-color: darken($color, 20%);
+}

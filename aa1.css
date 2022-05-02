@@ -1,0 +1,16 @@
+.header .span {
+  background-color: pink;
+}
+
+.header .span:active {
+  font-size: 16px;
+}
+
+.header .span:active {
+  font-size: 15px;
+}
+
+.text {
+  color: #fff;
+}
+/*# sourceMappingURL=aa1.css.map */
