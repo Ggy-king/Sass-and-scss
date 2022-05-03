@@ -1,0 +1,37 @@
+// 使用scss的时候，最后一个减少重复的主要特性就是选择器继承。
+// 选择器继承是说一个选择器可以继承为另一个选择器定义的所有样式。这个通过@extend语法实现。
+// @extent @extend
+.div {
+    font-size: 14px;
+}
+
+.item {
+    @extend .div;
+    background: pink;
+}
+
+// 群组选择器的嵌套 你需要在一个特定的容器元素内对一个群组选择器进行修饰时。
+// scss群组选择器的嵌套 但这么写有可能生成的css文件很大会降低网站运行速度
+.container {
+
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 8px;
+    }
+}
+
+// 子选择
+article>section {
+    border: 1px solid #ccc
+}
+
+// 同层选择
+header+p {
+    font-size: 1.1em;
+}
+
+// 同层全体组合选择器~ 选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素
+article~article {
+    border-top: 1px dashed #ccc
+}

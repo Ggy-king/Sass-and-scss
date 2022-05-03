@@ -1,0 +1,46 @@
+// 一、字符串函数 
+
+// unquote($string)：只能删除字符串最前和最后的引号（双引号或单引号），而无法删除字符串中间的引号。如果字符没有带引号，返回的将是字符串本身。
+// quote($string)：只能给字符串增加双引号，而且字符串中间有单引号或者空格时，需要用单引号或双引号括起，否则编译的时候将会报错。
+
+// 二、数字函数 
+
+// percentage($value)：将一个不带单位的数转换成百分比值，如果转换的值是一个带有单位的值，那么在编译的时候会报错误信息： 
+// round($value)：将数值四舍五入，转换成一个最接近的整数，可以携带单位的任何数值。 
+// ceil($value)：将大于自己的小数转换成下一位整数；将一个数转换成最接近于自己的整数，会将一个大于自身的任何小数转换成大于本身1的整数。也就是只做入，不做舍的计算 
+// floor($value)：将一个数去除他的小数部分；floor()函数刚好与ceil()函数功能相反，其主要将一个数去除其小数部分，并且不做任何的进位。也就是只做舍，不做入的计算 
+// abs($value)：返回一个数的绝对值； min($numbers…)：找出几个数值之间的最小值； 
+// max($numbers…)：找出几个数值之间的最大值。 
+
+// 三、List函数 
+
+// length($list)：返回一个列表的长度值； 
+// nth($list, $n)：返回一个列表中指定的某个标签值 
+// join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表； 
+// append($list1, $val, [$separator])：将某个值放在列表的最后； 
+// zip($lists…)：将几个列表结合成一个多维的列表； 
+// index($list, $value)：返回一个值在列表中的位置值。
+
+// 四、自定义函数
+// 1 scss函数名中的中划线和下划线是等同的，font-size和font_size指向同一个函数。
+
+// @function function-name($parameter) {
+//     @return value-to-be-returned;
+// }
+@function column-width($col, $total) {
+    @return percentage($col/$total);
+}
+
+.div {
+    width: column-width(40, 8);
+}
+
+/*文本格式化，超出范围，显示省略号*/
+@mixin text-overflow($width:100%, $display:block) {
+    width: $width;
+    display: $display;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
