@@ -1,0 +1,42 @@
+// 代码赘余 解决方案可以在该文件下定义一个@mixin 再在需要的代码片段中引入
+
+
+// @mixin name {
+// 更高级的做法是创建一个_mixix文件 把类似这种需要多处调用的归结到一起 最后引用就行
+//     混入
+// }
+
+
+
+// @mixin singleline-ellipsis($width) {
+//     // 括号内可以传入变量
+//     width: $width;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis; //文本超出用省略号表示
+// }
+@import 'mixins.scss';
+
+.text {
+    @include singleline-ellipsis(600px);
+
+}
+
+.content-text {
+    @include singleline-ellipsis(1000px);
+}
+
+
+
+// .text {
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis; //文本超出用省略号表
+//     width: 600px;
+// }
+// .content-text {
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis; //文本超出用省略号表
+//     width: 600px;
+// }

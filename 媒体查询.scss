@@ -1,0 +1,49 @@
+// 有些代码需要放在文件末尾去执行 比如媒体查询在不同屏幕下的改变 若放在后面 或编辑在中间比较影响阅读 不方便后期维护
+// 介绍一个新的引入方式 @content; 书写这个时候 它引入的位置 会替换掉的它的代码
+@mixin ipad($height) {
+    @media screen and (min-width:768px) {
+        height: $height;
+        @content;
+    }
+
+}
+
+.header {
+    width: 1000px;
+
+    @include ipad(200px) {
+        width: 500px;
+    }
+}
+
+.footer {
+    color: blue;
+
+    @include ipad(100px) {
+        color: red;
+    }
+}
+
+
+// 对比一下css码 理解一下
+// .header {
+//     width: 1000px;
+// }
+
+// @media screen and (min-width: 768px) {
+//     .header {
+//         height: 200px;
+//         width: 500px;
+//     }
+// }
+
+// .footer {
+//     color: blue;
+// }
+
+// @media screen and (min-width: 768px) {
+//     .footer {
+//         height: 100px;
+//         color: red;
+//     }
+// }

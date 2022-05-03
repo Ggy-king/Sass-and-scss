@@ -1,0 +1,21 @@
+.header {
+  width: 1000px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 200px;
+    width: 500px;
+  }
+}
+
+.footer {
+  color: blue;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 100px;
+    color: red;
+  }
+}

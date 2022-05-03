@@ -1,0 +1,7 @@
+@mixin singleline-ellipsis($width) {
+    // 括号内可以传入变量
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; //文本超出用省略号表示
+}
