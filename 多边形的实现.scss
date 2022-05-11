@@ -1,0 +1,69 @@
+// 函数封装实现
+
+@function polygon($points, $startPoint: 0) {
+    $angle: (360deg / $points);
+    $coords: '';
+
+    @for $point from $startPoint through ($points + $startPoint - 1) {
+        $pointAngle: $angle * $point;
+        $x: 50%+(percentage(sin($pointAngle)) / 2);
+        $y: 50% - (percentage(cos($pointAngle)) / 2);
+        $coords: $coords +$x +' '+$y;
+
+        @if $point  !=$points +$startPoint - 1 {
+            $coords: $coords +', ';
+        }
+
+        $point: $point + 1;
+    }
+
+    $polygon: 'polygon(' + $coords + ')';
+    @return unquote($polygon);
+}
+
+
+// 然后在调用定义好的polygon()，而且这个函数具有两个参数$points,
+// 这个参数指的是正多边形的边数；$startPoint指的是开始点，其默认值为0:
+$numPoints: 10;
+
+@for $i from 1 through $numPoints {
+    $num: $i +2;
+
+    .clippaths .polygon:nth-of-type(#{$i}) {
+        clip-path: polygon($num);
+    }
+}
+
+
+// clip-path 实现多边形
+
+@mixin clip-polygon($num, $color, $radius: 64px) {
+    position: relative;
+    width: $radius*2;
+    height: $radius*2;
+    background: $color;
+    $points: ();
+
+    @for $i from 0 to $num {
+        $angle: 360deg/2/$num +360deg / $num * $i;
+        $pointX: 50%+sin($angle)*50%;
+        $pointY: 50%+cos($angle)*50%;
+        $points: append($points, unquote($pointX+" " +$pointY), "comma");
+    }
+
+    clip-path: polygon(#{$points});
+}
+
+$maxNum: 10;
+
+@for $i from 1 through $maxNum {
+    $num: $i +2;
+
+    .polygon:nth-of-type(#{$i})::after {
+        content: "#{$num}";
+    }
+
+    .clippaths .polygon:nth-of-type(#{$i}) {
+        @include clip-polygon($num, #c00);
+    }
+}
